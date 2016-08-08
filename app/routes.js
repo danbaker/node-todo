@@ -74,8 +74,8 @@ function runRepeatedRequests(options, res, waitseconds, repeattimes)
     if (res) res.send("http://" + options.host + ":" + options.port + "/" + options.path + " = OK -- in " + elapsedms + "ms");
     if (--repeattimes > 0) {
       setTimeout(function() {
-        runRepeatedRequests(options, undefined, waitseconds*1000, repeattimes);
-      }, waitseconds);
+        runRepeatedRequests(options, undefined, waitseconds, repeattimes);
+      }, waitseconds*1000);
     }
   }, function(errMessage) {
     if (res) res.send("ERROR - " + errMessage);
