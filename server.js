@@ -1,7 +1,9 @@
+console.log("CMD: node server.js (port#)");
+
 // set up ======================================================================
 var express = require('express');
-var app = express(); 						// create our app w/ express
-var port = process.env.PORT || 8080; 				// set the port
+var app = express(); 						      // create our app w/ express
+var port = process.argv[2] || 8080;   // set the port
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
